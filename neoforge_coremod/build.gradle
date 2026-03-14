@@ -16,7 +16,7 @@ configurations {
 }
 
 base {
-    archivesName = "ConfigManager-neoforge-1.21.8-1.21.11"
+    archivesName = "ConfigManager-neoforge-26.1"
 }
 
 dependencies {
@@ -50,10 +50,6 @@ jar {
 
 neoForge {
     version = neoforge_version
-    parchment {
-        minecraftVersion = parchment_minecraft
-        mappingsVersion = parchment_version
-    }
     runs {
         configureEach {
             systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
@@ -80,7 +76,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 unifiedPublishing {
     project {
-        gameVersions = ["1.21.9", "1.21.10", "1.21.11"]
+        gameVersions = ["26.1"]
         gameLoaders = ["neoforge"]
 
 

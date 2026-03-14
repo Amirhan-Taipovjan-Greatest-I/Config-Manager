@@ -1,11 +1,11 @@
 package io.github.thebossmagnus.mods.config_manager.common.screen;
 
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Renderable;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.FormattedCharSequence;
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,13 +46,13 @@ public class MultilineLabelWidget implements Renderable {
     /**
      * Renders the multi-line label with automatic word wrapping
      *
-     * @param guiGraphics The graphics context
+     * @param guiGraphicsExtractor The graphics context
      * @param mouseX      Mouse X position
      * @param mouseY      Mouse Y position
      * @param partialTick Partial tick
      */
     @Override
-    public void render(@NotNull GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+    public void extractRenderState(@NonNull GuiGraphicsExtractor guiGraphicsExtractor, int mouseX, int mouseY, float partialTick) {
         // Collect the main text and its siblings (extra components attached to the main one)
         List<Component> allComponents = new ArrayList<>();
         allComponents.add(text);
@@ -78,9 +78,9 @@ public class MultilineLabelWidget implements Renderable {
         for (FormattedCharSequence line : outputLines) {
             int drawX = centered ? x + width / 2 : x;
             if (centered) {
-                guiGraphics.drawCenteredString(font, line, drawX, currentY, 0xFFFFFFFF);
+                guiGraphicsExtractor.centeredText(font, line, drawX, currentY, 0xFFFFFFFF);
             } else {
-                guiGraphics.drawString(font, line, drawX, currentY, 0xFFFFFFFF);
+                guiGraphicsExtractor.text(font, line, drawX, currentY, 0xFFFFFFFF);
             }
             currentY += lineHeight;
         }

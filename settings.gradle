@@ -10,9 +10,7 @@ pluginManagement {
                 }
             }
             filter {
-                includeGroup('net.fabricmc')
-                includeGroup('net.fabricmc.unpick')
-                includeGroup('fabric-loom')
+                includeGroupAndSubgroups('net.fabricmc')
             }
         }
         exclusiveContent {
@@ -26,7 +24,11 @@ pluginManagement {
                 includeGroupAndSubgroups("org.spongepowered")
             }
         }
-        maven { url "https://maven.architectury.dev/" }
+        maven {
+            name = 'NeoForge'
+            url = uri('https://maven.neoforged.net/')
+        }
+        maven { url "https://maven.architectury.dev/" } // for unified-publishing
     }
 }
 
@@ -38,5 +40,5 @@ plugins {
 rootProject.name = 'ConfigManager'
 include('common')
 include('fabric')
-include('neoforge')
-include('neoforge_coremod')
+//include('neoforge')
+//include('neoforge_coremod')

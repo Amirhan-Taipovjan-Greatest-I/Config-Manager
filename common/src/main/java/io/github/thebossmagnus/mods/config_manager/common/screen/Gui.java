@@ -3,7 +3,7 @@ package io.github.thebossmagnus.mods.config_manager.common.screen;
 
 import io.github.thebossmagnus.mods.config_manager.common.AddFlagsUtil;
 import io.github.thebossmagnus.mods.config_manager.common.Constants;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -104,10 +104,10 @@ public class Gui extends Screen {
     }
 
     @Override
-    public void render(@NotNull GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
-        super.render(guiGraphics, mouseX, mouseY, partialTick);
-        updateWarningsLabel.render(guiGraphics, mouseX, mouseY, partialTick);
-        resetWarningsLabel.render(guiGraphics, mouseX, mouseY, partialTick);
+    public void extractRenderState(@NotNull GuiGraphicsExtractor guiGraphicsExtractor, int mouseX, int mouseY, float partialTick) {
+        super.extractRenderState(guiGraphicsExtractor, mouseX, mouseY, partialTick);
+        updateWarningsLabel.extractRenderState(guiGraphicsExtractor, mouseX, mouseY, partialTick);
+        resetWarningsLabel.extractRenderState(guiGraphicsExtractor, mouseX, mouseY, partialTick);
     }
 
 
