@@ -15,21 +15,24 @@ idea {
 
 
 tasks.register('collectJars', Copy) {
-    //dependsOn(":fabric:build", ":neoforge_coremod:build")
-    dependsOn(":fabric:build")
-
-    from("fabric/build/libs") {
-        include '*.jar'
-        exclude '*-sources.jar', '*-javadoc.jar', '*-dev-shadow.jar'
+    def fabricJars = file("fabric/build/libs")
+    if (fabricJars.exists()) {
+        from(fabricJars) {
+            include '*.jar'
+            exclude '*-sources.jar', '*-javadoc.jar', '*-dev-shadow.jar'
+        }
     }
 
-    //from("neoforge_coremod/build/libs") {
-    //    include '*.jar'
-    //    exclude '*-sources.jar', '*-javadoc.jar', '*-dev-shadow.jar'
-    //    rename { originalName ->
-    //        originalName.replace("_coremod", "")
-    //    }
-    //}
+    def neoJars = file("neoforge_coremod/build/libs")
+    if (neoJars.exists()) {
+        from(neoJars) {
+            include '*.jar'
+            exclude '*-sources.jar', '*-javadoc.jar', '*-dev-shadow.jar'
+            rename { originalName ->
+                originalName.replace("_coremod", "")
+            }
+        }
+    }
 
     into("$rootDir/build/libs")
 }
