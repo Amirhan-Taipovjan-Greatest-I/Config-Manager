@@ -1,7 +1,7 @@
 {
   "modmenu.summaryTranslation.config_manager": "Мод җыелмасын ясаучыларга кулланучыга иң мөмкин дус рәвешендә бирә.",
   "modmenu.descriptionTranslation.config_manager": "Мод җыелмасын ясаучыларга кулланучыга иң мөмкин дус рәвешендә бирергә рөхсәт бирә торган Minecraft моды.",
-  "config_manager.title": "Manage modpacks config",
+  "config_manager.title": "Мод җыелмасы көйләүләрен идарә итү",
   "config_manager.close": "Ябу",
   "config_manager.confirmation": "Чыннан да телисезме?",
   "config_manager.success": "Уеныгызны яңадан башлагыз",
