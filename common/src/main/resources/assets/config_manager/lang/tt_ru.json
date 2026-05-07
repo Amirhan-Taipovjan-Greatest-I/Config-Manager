@@ -4,9 +4,9 @@
   "config_manager.title": "Manage modpacks config",
   "config_manager.close": "Ябу",
   "config_manager.confirmation": "Чыннан да телисезме?",
-  "config_manager.success": "Уеныгыз яңадан башлану",
+  "config_manager.success": "Уеныгызны яңадан башлагыз",
   "config_manager.error": "Хата булды",
-  "config_manager.update_config": "Мод җыелмасы көйләүләрен яңарт",у
+  "config_manager.update_config": "Мод җыелмасы көйләүләрен яңарту",
   "config_manager.reset_config": "Мод җыелмасы көйләүләрен ташлату",
   "config_manager.warning.game_restart": "Сезгә уеныгызны яңадан башларга кирәк булачак",
   "config_manager.warning.lose_some_config": "§eКайбер көйләүләрегез мод җыелмасының гадәти көйләүләренә тулысынча үзгәртелә.§l Хәзерге көйләүләрегез өлешчә күчерелә ала§r\n",
